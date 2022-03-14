@@ -2,17 +2,17 @@
 
 //Função que é executada no carregamento da página 
 window.onload = function(){
-    let valor1 = document.querySelector("#valor1");
-    let valor2 = document.querySelector("#valor2");
-    let valor3 = document.querySelector("#valor3");
+    let A = parseInt(document.querySelector("#valor1").value);
+    let B = parseInt(document.querySelector("#valor2").value);
+    let C = parseInt(document.querySelector("#valor3").value);
 
     let calc = document.querySelector("#calc");
 
     calc.addEventListener("click", function(){
-        if((valor1.value < valor2.value + valor3.value) && (valor2.value < valor1.value + valor3.value) && (valor3.value < valor1.value + valor2.value)){
-            if((valor1.value == valor2.value)&& (valor2.value == valor3.value)&& (valor3.value == valor1.value)){
+        if((A<B+C) && (B<A+C) && (C<A+B)){
+            if(A==B && B==C){
                 document.getElementById("result").value = "Equilátero! '-'";
-            } else if((valor1.value != valor2.value)&& (valor2.value != valor3.value)&& (valor3.value != valor1.value)){
+            } else if(A!=B && B!=C){
                 document.getElementById("result").value = "Escaleno! '_'";
             } else {
                  document.getElementById("result").value = "Isóceles! 'O'";
